@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-version https://git-lfs.github.com/spec/v1
-oid sha256:0517b7d535fe5c802e7cdd2584f8cb67be8020c014272d2f912d99f6742d6078
-size 2612
-=======
 from torchvision import transforms
 
 
@@ -64,4 +59,3 @@ def test_transforms_prepare(size=(256, 256), center_crop=236, normalize_mean=(0,
                                           transforms.ToTensor(),
                                           transforms.Normalize(normalize_mean, normalize_std)])
     return test_transforms
->>>>>>> affc212eb69e4ba073970100b267a6cd62802844

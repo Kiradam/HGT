@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-version https://git-lfs.github.com/spec/v1
-oid sha256:dbbaca1c8de7bdc9eacda711a406bc85c6768ba6d979cd67c1b9235c29bd5446
-size 4188
-=======
 import torch
+import os
 
 
 def validation(model, testloader, criterion) -> tuple:
@@ -15,17 +11,18 @@ def validation(model, testloader, criterion) -> tuple:
     :param criterion: criterion object
     :return: validation loss, accuracy
     """
-
     valid_loss = 0
     accuracy = 0
 
     # change model to work with cuda
-    model.to('cuda')
+    if torch.cuda.is_available():
+        model.to('cuda')
 
     # Iterate over data from validloader
     for ii, (images, labels) in enumerate(testloader):
         # Change images and labels to work with cuda
-        images, labels = images.to('cuda'), labels.to('cuda')
+        if torch.cuda.is_available():
+            images, labels = images.to('cuda'), labels.to('cuda')
 
         # Forward pass image though model for prediction
         output = model.forward(images)
@@ -54,7 +51,6 @@ def train(model, trainloader, testloader, optimizer, criterion, lrscheduler, epo
     :param epoch: num of epochs
     :return: trained nn
     """
-
     epochs = epoch
     steps = 0
     print_every = 40
@@ -113,12 +109,14 @@ def perf_measure(model, testloader) -> None:
     """
     correct = 0
     total = 0
-    model.to('cuda')
+    if torch.cuda.is_available():
+        model.to('cuda')
 
     with torch.no_grad():
         for data in testloader:
             images, labels = data
-            images, labels = images.to('cuda'), labels.to('cuda')
+            if torch.cuda.is_available():
+                images, labels = images.to('cuda'), labels.to('cuda')
             # Get probabilities
             outputs = model(images)
             # Turn probabilities into predictions
@@ -129,4 +127,17 @@ def perf_measure(model, testloader) -> None:
             correct += (predicted_outcome == labels).sum().item()
 
     print(f"Test accuracy of model: {round(100 * correct / total, 3)}%")
->>>>>>> affc212eb69e4ba073970100b267a6cd62802844
+
+
+def find_classes(dir: str):
+    """
+    Function for getting labels
+
+    :param dir: string of path
+    :return: list of classes and dict of class:number
+    """
+
+    classes = os.listdir(dir)
+    classes.sort()
+    class_to_idx = {classes[i]: i for i in range(len(classes))}
+    return classes, class_to_idx

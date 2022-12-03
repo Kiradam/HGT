@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-version https://git-lfs.github.com/spec/v1
-oid sha256:199a94271164b7b76e21917c93d1341ec76e94058b56a6a72788f79489bfa92c
-size 571
-=======
 from torch import nn
 from torchvision import models
 
@@ -23,4 +18,3 @@ def net(pre_type: str = "resnet", num_label: int = 48) -> nn:
         model.classifier = nn.Linear(num_ftrs, num_label)
 
     return model
->>>>>>> affc212eb69e4ba073970100b267a6cd62802844
