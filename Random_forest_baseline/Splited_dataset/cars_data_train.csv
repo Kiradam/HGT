@@ -1,0 +1,54 @@
+<<<<<<< HEAD
+version https://git-lfs.github.com/spec/v1
+oid sha256:f7114ffa87a656d493c81c184f3b222bc47e350e3a8d584896a3d408290c57ed
+size 883
+=======
+Daiatsu_Core,80
+Daiatsu_Hijet,44
+Daiatsu_Mira,80
+FAW_V2,28
+FAW_XPV,26
+Honda_BRV,27
+Honda_city_1994,32
+Honda_city_2000,69
+Honda_City_aspire,105
+Honda_civic_1994,18
+Honda_civic_2005,34
+Honda_civic_2007,74
+Honda_civic_2015,31
+Honda_civic_2018,82
+Honda_Grace,21
+Honda_Vezell,38
+KIA_Sportage,25
+Suzuki_alto_2007,132
+Suzuki_alto_2019,56
+Suzuki_alto_japan_2010,27
+Suzuki_carry,13
+Suzuki_cultus_2018,269
+Suzuki_cultus_2019,108
+Suzuki_Every,21
+Suzuki_highroof,63
+Suzuki_kyber,52
+Suzuki_liana,33
+Suzuki_margala,16
+Suzuki_Mehran,195
+Suzuki_swift,118
+Suzuki_wagonR_2015,112
+Toyota HIACE 2000,23
+Toyota_Aqua,77
+Toyota_axio,20
+Toyota_corolla_2000,33
+Toyota_corolla_2007,82
+Toyota_corolla_2011,127
+Toyota_corolla_2016,270
+Toyota_fortuner,43
+Toyota_Hiace_2012,72
+Toyota_Landcruser,17
+Toyota_Passo,60
+Toyota_pirus,23
+Toyota_Prado,20
+Toyota_premio,18
+Toyota_Vigo,53
+Toyota_Vitz,81
+Toyota_Vitz_2010,48
+>>>>>>> affc212eb69e4ba073970100b267a6cd62802844
