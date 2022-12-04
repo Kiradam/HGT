@@ -43,5 +43,5 @@ def load_checkpoint(filepath: str):
         checkpoint = torch.load(filepath, map_location=torch.device('cpu'))
     model.load_state_dict(checkpoint['state_dict'], strict=False)
     model.class_to_idx = checkpoint['class_to_idx']
-
+    model.eval()
     return model
